@@ -11,9 +11,6 @@ alias "...."="cd ../../.."
 alias "....."="cd ../../../.."
 alias "......"="cd ../../../../.."
 
-# cp
-alias cp="cp -i"
-
 # clear
 alias c="clear"
 
@@ -35,14 +32,8 @@ alias mkdir="mkdir -p"
 # mount
 alias mount="mount |column -t"
 
-# mv
-alias mv="mv -i"
-
 # ping
 alias ping="ping -c 5"
-
-# rm
-alias rm="rm -i"
 
 # script
 alias scriptclear="cat typescript | perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > typescript-processed"
