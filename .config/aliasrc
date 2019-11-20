@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# bash
+alias ":wg"="exit"
+alias ":q"="exit"
+
+# cd
+alias ".."="cd .."
+alias "..."="cd ../.."
+alias "...."="cd ../../.."
+alias "....."="cd ../../../.."
+alias "......"="cd ../../../../.."
+
+# cp
+alias cp="cp -i"
+
+# clear
+alias c="clear"
+
+# config
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
+# grep
+alias grep="grep --color=auto"
+
+# ls(d)
+alias l="lsd"
+alias la="lsd -la"
+alias ll="lsd -l"
+alias tree="lsd --tree"
+
+# mkdir
+alias mkdir="mkdir -p"
+
+# mount
+alias mount="mount |column -t"
+
+# mv
+alias mv="mv -i"
+
+# ping
+alias ping="ping -c 5"
+
+# rm
+alias rm="rm -i"
+
+# script
+alias scriptclear="cat typescript | perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > typescript-processed"
+
+# nvim
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
