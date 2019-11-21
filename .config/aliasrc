@@ -10,6 +10,7 @@ alias "..."="cd ../.."
 alias "...."="cd ../../.."
 alias "....."="cd ../../../.."
 alias "......"="cd ../../../../.."
+alias "dockervol"="cd /var/lib/docker/volumes"
 
 # clear
 alias c="clear"
