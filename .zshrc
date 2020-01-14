@@ -5,7 +5,7 @@ setopt autocd autopushd \
 
 # Enable colors and change prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}#%b "
 
 # History in cache directory
 HISTSIZE=10000
@@ -47,42 +47,6 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
-
-# Vim copy and paste fix in terminal
-function x11-clip-wrap-widgets() {
-	local copy_or_paste=$1
-	shift
-	for widget in $@; do
-		if [[ $copy_or_paste == "copy" ]]; then
-		eval "
-		function _x11-clip-wrapped-$widget() {
-		zle .$widget
-		xclip -in -selection clipboard <<<\$CUTBUFFER
-		}
-		"
-else
-eval "
-function _x11-clip-wrapped-$widget() {
-CUTBUFFER=\$(xclip -out -selection clipboard)
-zle .$widget
-}
-"
-fi
-zle -N $widget _x11-clip-wrapped-$widget
-done
-}
-
-
-local copy_widgets=(
-vi-yank vi-yank-eol vi-delete vi-backward-kill-word vi-change-whole-line
-)
-local paste_widgets=(
-vi-put-{before,after}
-)
-
-# NB: can atm. only wrap native widgets
-x11-clip-wrap-widgets copy $copy_widgets
-x11-clip-wrap-widgets paste  $paste_widgets
 
 # starts one or multiple args in background
 background() {
