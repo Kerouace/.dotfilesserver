@@ -62,3 +62,7 @@ source $HOME/.profile 2>/dev/null # Load .profile
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+	tmux attach-session -t $USER || tmux new-session -s $USER
+fi
