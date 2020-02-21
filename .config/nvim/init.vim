@@ -66,6 +66,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " Plugin section
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'qpkorr/vim-renamer'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
