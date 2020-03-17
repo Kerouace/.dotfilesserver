@@ -9,7 +9,7 @@ My Server and root account dotfiles.
 - tmux
 - neovim
 ### Recommended
-- zsh (highly recommended)
+- zsh (highly recommended) (change shell with: ```chsh -s /bin/zsh```)
 - sc-im
 
 ## Migration of my dotfiles to other system
