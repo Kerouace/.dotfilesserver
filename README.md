@@ -16,7 +16,7 @@ My Server and root account dotfiles.
 ### set alias in .bashrc
 ```alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'```
 ### clone this repository
-```git clone --bare https://github.com/TiynGER/.dotfilesserver $HOME/.dotfiles```
+```git clone --bare https://github.com/Kerouace/.dotfilesserver $HOME/.dotfiles```
 ### checkout changes
 ```config checkout```
 ### backup old files
